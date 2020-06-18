@@ -1,0 +1,18 @@
+.Icon-dots {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0 1vw;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid darkgrey;
+    background-color: grey;
+    pointer-events: all;
+}
+
+.Icon-dots div {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgb(131, 131, 226);
+}

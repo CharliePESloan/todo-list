@@ -1,0 +1,135 @@
+#List-select {
+    display: flex;
+    position: static;
+    width: 100vw;
+    height: 8vh;
+    justify-content: flex-end;
+    background-color: rgb(40, 72, 119);
+    padding: 10px 0;
+    z-index: 2;
+    box-sizing: border-box;
+}
+#List-select > :-webkit-any(.Todo-list-tab,.Icon-dots) {
+    border: none;
+    margin: 0 10px;
+    border-radius: 5vw;
+    background-color: rgb(68, 187, 255);
+    transition: border-radius 0.5s;
+}
+#List-select > .Todo-list-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    /* padding: 0 4vw; */
+    flex-grow: 1;
+    color: white;
+    font-weight: lighter;
+    font-size: 3vw;
+    pointer-events: none;
+}
+#List-select > .Todo-list-tab > .Icon-cross {
+    flex-grow: 0;
+    width: 4vw;
+    height: 4vw;
+}
+#List-select > .Todo-list-tab > span {
+    flex-grow: 2;
+    pointer-events: all;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#List-select > .Icon-dots {
+    width: 6vh;
+    height: 6vh;
+    flex-basis: 6vh;
+    flex-grow: 0;
+}
+#List-select > .Icon-dots > div {
+    background-color: white;
+    transition: transform 0.3s 0s;
+}
+#List-select > .Icon-dots.selected {
+    border-radius: 0;
+}
+#List-select > .Icon-dots.selected > div {
+    /* transform: scale(7,1); */
+    border-radius: 0;
+}
+#List-select > .Icon-dots.selected > div:nth-child(1) {
+    transform: translate(200%,0) rotate(45deg) scale(7,0.5);
+}
+#List-select > .Icon-dots.selected > div:nth-child(3) {
+    transform: translateX(-200%) rotate(135deg) scale(7,0.5);
+}
+#List-select > .Icon-dots.selected > div:nth-child(2) {
+    display: none;
+}
+
+
+#Todo-all-lists-box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    position: absolute;
+    top: 18vh;
+    right: 0;
+    width: 60vw;
+    height: 82vh;
+    max-height: 82vh;
+    overflow: visible;
+    z-index: 1;
+    background-color: rgba(200,200,200,0.6);
+    border-left: 2px solid white;
+    
+    transition: transform 0.5s 0s;
+    transform: translateX(0);
+}
+#Todo-all-lists-box > .Todo-list-select-button {
+    display: flex;
+    height: 8vh;
+    box-sizing: border-box;
+    /* padding: 20px 10px; */
+
+    border-bottom: 2px solid white;
+}
+#Todo-all-lists-box > .Todo-list-select-button.selected > button {
+    background-color: rgb(170, 170, 170);
+    color: white;
+}
+#Todo-all-lists-box > .Todo-list-select-button > .Icon-pin {
+    flex-basis: 8vh;
+}
+#Todo-all-lists-box > .Todo-list-select-button > button {
+    flex-grow: 1;
+
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+}
+#Todo-list-select-box-grey {
+    content: " ";
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 82vh;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(200,200,200,0.6);
+    opacity: 1;
+    filter: blur(55px);
+    pointer-events: all;
+    transition: opacity 1s 0s ease-in-out, filter 1s 0s ease-in-out;
+}
+#Todo-list-select-box-grey.hidden {
+    opacity: 0;
+    filter: blur(0px);
+    pointer-events: none;
+}
+#Todo-all-lists-box.hidden {
+    transform: translateX(60vw);
+}

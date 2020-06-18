@@ -1,0 +1,26 @@
+.Icon-cross {
+    --cross-color: white;
+    --hover-color: red;
+    position: relative;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.Icon-cross:hover > div {
+    background-color: var(--hover-color);
+}
+.Icon-cross > div {
+    transition: background-color 0.25s 0.01s;
+    position: absolute;
+    background-color: var(--cross-color);
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.Icon-cross > div:nth-child(1) {
+    transform: translateX(200%) rotate(45deg);
+}
+.Icon-cross > div:nth-child(2) {
+    transform: translateX(200%) rotate(135deg);
+}

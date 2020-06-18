@@ -1,0 +1,41 @@
+.Icon-pin {
+    --Pin-head: red;
+    --Pin-needle: rgb(83, 83, 83);
+    --Pin-background: rgb(231, 231, 231);
+
+    position: relative;
+    background-color: var(--Pin-background);
+    perspective: 4em;
+}
+
+.Icon-pin > div {
+    transform-style: preserve-3d;
+    position: absolute;
+    z-index: 2;
+}
+
+.Icon-pin > div:nth-child(1) {
+    background-color: var(--Pin-head);
+    top: 20%;
+    left: 30%;
+    right: 30%;
+    bottom: 50%;
+    transform: rotateX(-40deg);
+}
+.Icon-pin > div:nth-child(2) {
+    background-color: var(--Pin-head);
+    top: 40%;
+    left: 30%;
+    right: 30%;
+    bottom: 40%;
+    transform: rotateX(45deg);
+}
+.Icon-pin > div:nth-child(3) {
+    background-color: var(--Pin-needle);
+    top: 50%;
+    left: 48%;
+    right: 48%;
+    bottom: -10%;
+    transform: perspective(50px) rotateX(-45deg);
+    z-index: 1;
+}
